@@ -2,7 +2,10 @@
     "entity": {
       "light": {
         "light": {
-          "default": "mdi:string-lights"
+          "default": "mdi:string-lights",
+          "on": "mdi:string-lights",
+          "off": "mdi:string-lights-off",
+          "unavailable": "mdi:string-lights-off"
         }
       }
     }

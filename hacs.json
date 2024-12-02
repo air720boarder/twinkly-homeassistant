@@ -1,11 +1,12 @@
 {
-    "name": "Twinkly Home Assistant Custom Integration",
+    "name": "Twinkly Home Assistant Integration",
     "content_in_root": false,
     "domain": "twinkly_homeassistant",
-    "iot_class": "Local Polling",
+    "iot_class": "Local Push",
     "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
     "issue_tracker": "https://github.com/air720boarder/twinkly-homeassistant/issues",
     "codeowners": ["@air720boarder"],
-    "requirements": [],
-    "version": "1.0.1"
-  }
+    "requirements": ["ttls>=1.9.0"],
+    "version": "1.0.0",
+    "config_flow": true
+}

@@ -16,7 +16,7 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     async def async_step_user(self, user_input=None):
-        """Handle the initial step initiated by the user."""
+        """Handle the initial step."""
         return await self.async_step_manual(user_input)
 
     async def async_step_manual(self, user_input=None):
@@ -24,6 +24,10 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
         if user_input is not None:
             host = user_input["host"]
+            self.hass.components.persistent_notification.create(
+                f"Connecting to Twinkly device at {host}...",
+                title="Twinkly Setup"
+            )
             from ttls import Twinkly
 
             twinkly = Twinkly(host)
@@ -45,15 +49,7 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if not name.lower().startswith("twinkly"):
             return self.async_abort(reason="not_twinkly_device")
 
-        from ttls import Twinkly
-
-        twinkly = Twinkly(host)
-        try:
-            await self.hass.async_add_executor_job(twinkly.update)
-            await self.async_set_unique_id(twinkly.mac)
-            self._abort_if_unique_id_configured()
-            self.context.update({"title_placeholders": {"name": twinkly.device_name}})
-            return self.async_create_entry(title=twinkly.device_name, data={"host": host})
-        except Exception:
-            _LOGGER.error("Failed to connect to Twinkly device at %s", host)
-            return await self.async_step_manual()
+        await self.async_set_unique_id(discovery_info["properties"]["id"])
+        self._abort_if_unique_id_configured()
+        self.context.update({"title_placeholders": {"name": name}})
+        return await self.async_step_manual({"host": host})

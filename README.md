@@ -67,3 +67,10 @@ If you encounter any issues, please report them on the [GitHub Issues](https://g
 ## License
 
 This project is licensed under the MIT License.
+
+## HACS Installation
+
+1. Add this repository to HACS as a custom repository.
+2. Search for **Twinkly Home Assistant Integration** in HACS and install it.
+3. Restart Home Assistant.
+4. Twinkly devices should be auto-discovered. If not, you can add them manually via **Settings > Devices & Services > Add Integration**.

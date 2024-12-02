@@ -45,6 +45,8 @@ class TwinklyLight(LightEntity):
             model=twinkly.product_name,
             sw_version=twinkly.fw_version,
         )
+        self._attr_device_class = "light"
+        self._attr_has_entity_name = True
 
     @property
     def name(self):
@@ -88,6 +90,16 @@ class TwinklyLight(LightEntity):
 
     @property
     def device_info(self):
+        """Return device info."""
+        return DeviceInfo(
+            identifiers={(DOMAIN, self._unique_id)},
+            name=self._name,
+            manufacturer="Twinkly",
+            model=self._twinkly.product_name,
+            sw_version=self._twinkly.fw_version,
+            hw_version=self._twinkly.hw_version,
+            configuration_url=f"http://{self._twinkly.host}",
+        )
         """Return device info."""
         return self._device_info
 
@@ -144,6 +156,17 @@ class TwinklyLight(LightEntity):
         """Fetch new state data for this light."""
         try:
             await self.hass.async_add_executor_job(self._twinkly.update)
+            self._available = True
+            # ... rest of update code ...
+        except Exception as e:
+            if self._available:  # Only log once when becoming unavailable
+                _LOGGER.error("Error updating Twinkly light: %s", e)
+            self._available = False
+            # Attempt reconnection
+            try:
+                await self.hass.async_add_executor_job(self._twinkly.connect)
+            except Exception:
+                pass
             self._is_on = self._twinkly.is_on
             self._brightness = int(self._twinkly.brightness * 2.55)
             color = self._twinkly.color

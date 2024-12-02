@@ -6,31 +6,38 @@
         {
             "manual":
             {
-                "title": "Twinkly Gerät hinzufügen",
+                "title": "Twinkly-Gerät hinzufügen",
+                "description": "Geben Sie die IP-Adresse Ihres Twinkly-Geräts ein",
                 "data":
                 {
-                    "host": "Host oder IP-Adresse"
+                    "host": "IP-Adresse"
                 }
             }
         },
         "error":
         {
-            "cannot_connect": "Verbindung zum Gerät fehlgeschlagen.",
-            "not_twinkly_device": "Das gefundene Gerät ist kein Twinkly-Gerät."
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_host": "Ungültige IP-Adresse",
+            "unknown": "Unerwarteter Fehler"
         },
         "abort":
         {
-            "already_configured": "Dieses Gerät ist bereits konfiguriert.",
-            "cannot_connect": "Verbindung zum Gerät fehlgeschlagen.",
-            "not_twinkly_device": "Das gefundene Gerät ist kein Twinkly-Gerät."
+            "already_configured": "Gerät bereits konfiguriert"
         }
     },
-    "device_automation":
+    "options":
     {
-        "trigger_type":
+        "step":
         {
-            "turned_on": "Twinkly eingeschaltet",
-            "turned_off": "Twinkly ausgeschaltet"
+            "init":
+            {
+                "title": "Twinkly-Optionen",
+                "data":
+                {
+                    "scan_interval": "Aktualisierungsintervall (Sekunden)",
+                    "brightness_scale": "Helligkeitsskala (%)"
+                }
+            }
         }
     }
 }

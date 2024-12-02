@@ -7,30 +7,37 @@
             "manual":
             {
                 "title": "Agregar dispositivo Twinkly",
+                "description": "Ingrese la dirección IP de su dispositivo Twinkly",
                 "data":
                 {
-                    "host": "Host o dirección IP"
+                    "host": "Dirección IP"
                 }
             }
         },
         "error":
         {
-            "cannot_connect": "No se pudo conectar al dispositivo.",
-            "not_twinkly_device": "El dispositivo descubierto no es un dispositivo Twinkly."
+            "cannot_connect": "No se pudo conectar",
+            "invalid_host": "Dirección IP inválida",
+            "unknown": "Error inesperado"
         },
         "abort":
         {
-            "already_configured": "Este dispositivo ya está configurado.",
-            "cannot_connect": "No se pudo conectar al dispositivo.",
-            "not_twinkly_device": "El dispositivo descubierto no es un dispositivo Twinkly."
+            "already_configured": "El dispositivo ya está configurado"
         }
     },
-    "device_automation":
+    "options":
     {
-        "trigger_type":
+        "step":
         {
-            "turned_on": "Twinkly encendido",
-            "turned_off": "Twinkly apagado"
+            "init":
+            {
+                "title": "Opciones de Twinkly",
+                "data":
+                {
+                    "scan_interval": "Intervalo de actualización (segundos)",
+                    "brightness_scale": "Escala de brillo (%)"
+                }
+            }
         }
     }
 }
