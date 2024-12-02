@@ -1,18 +1,13 @@
 {
     "domain": "twinkly_homeassistant",
     "name": "Twinkly Home Assistant Integration",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
-    "requirements": ["git+https://github.com/username/ttls.git@master#egg=ttls"],
-    "codeowners":
-    [
-        "@air720boarder"
-    ],
+    "requirements": ["ttls>=1.9.0"],
+    "codeowners": ["@air720boarder"],
     "iot_class": "local_polling",
-    "zeroconf":
-    [
-        "_http._tcp.local."
-    ],
+    "zeroconf": ["_http._tcp.local."],
     "config_flow": true,
-    "integration_type": "hub"
-}
+    "integration_type": "hub",
+    "icon": "custom_components/twinkly_homeassistant/icon.png"
+  }
