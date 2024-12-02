@@ -1,4 +1,6 @@
-# Twinkly Home Assistant Integration
+![Twinkly logo](https://mma.prnewswire.com/media/2096093/Twinkly_Logo_Logo.jpg)
+
+# Twinkly Home Assistant Integration *(Unofficial)*
 
 This is a custom integration for Home Assistant to control Twinkly Generation II lights using the `ttls` library.
 
