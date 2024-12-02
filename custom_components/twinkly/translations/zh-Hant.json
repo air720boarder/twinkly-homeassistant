@@ -1,0 +1,49 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "連接到 Twinkly",
+                "description": "設置您的 Twinkly 設備",
+                "data": {
+                    "host": "IP 位址"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "連接失敗",
+            "invalid_auth": "驗證無效",
+            "unknown": "意外錯誤"
+        },
+        "abort": {
+            "already_configured": "設備已配置"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Twinkly 選項",
+                "data": {
+                    "scan_interval": "更新間隔（秒）",
+                    "brightness_scale": "亮度比例（%）"
+                }
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "twinkly": {
+                "state_attributes": {
+                    "effect": {
+                        "name": "效果",
+                        "state": {
+                            "movie": "電影",
+                            "effect": "效果",
+                            "rt": "即時",
+                            "off": "關閉"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

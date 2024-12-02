@@ -9,7 +9,6 @@ from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-@config_entries.HANDLERS.register(DOMAIN)
 class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for Twinkly Home Assistant Integration."""
 

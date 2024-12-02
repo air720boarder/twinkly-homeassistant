@@ -1,0 +1,49 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Twinklyに接続",
+                "description": "Twinklyデバイスを設定する",
+                "data": {
+                    "host": "IPアドレス"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "接続に失敗しました",
+            "invalid_auth": "認証が無効です",
+            "unknown": "予期せぬエラー"
+        },
+        "abort": {
+            "already_configured": "デバイスは既に設定されています"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Twinklyオプション",
+                "data": {
+                    "scan_interval": "更新間隔（秒）",
+                    "brightness_scale": "明るさスケール（%）"
+                }
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "twinkly": {
+                "state_attributes": {
+                    "effect": {
+                        "name": "エフェクト",
+                        "state": {
+                            "movie": "ムービー",
+                            "effect": "エフェクト",
+                            "rt": "リアルタイム",
+                            "off": "オフ"
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

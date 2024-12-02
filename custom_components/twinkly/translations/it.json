@@ -1,0 +1,49 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Connetti a Twinkly",
+                "description": "Configura il tuo dispositivo Twinkly",
+                "data": {
+                    "host": "Indirizzo IP"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore inaspettato"
+        },
+        "abort": {
+            "already_configured": "Il dispositivo è già configurato"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Opzioni Twinkly",
+                "data": {
+                    "scan_interval": "Intervallo di aggiornamento (secondi)",
+                    "brightness_scale": "Scala di luminosità (%)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "twinkly": {
+                "state_attributes": {
+                    "effect": {
+                        "name": "Effetto",
+                        "state": {
+                            "movie": "Film",
+                            "effect": "Effetto",
+                            "rt": "Tempo reale",
+                            "off": "Spento"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

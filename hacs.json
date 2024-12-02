@@ -1,12 +1,15 @@
 {
-    "name": "Twinkly Home Assistant Integration",
-    "content_in_root": false,
-    "domain": "twinkly_homeassistant",
-    "iot_class": "Local Push",
-    "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
-    "issue_tracker": "https://github.com/air720boarder/twinkly-homeassistant/issues",
-    "codeowners": ["@air720boarder"],
-    "requirements": ["ttls>=1.9.0"],
-    "version": "1.0.0",
-    "config_flow": true
-}
+  "domain": "twinkly",
+  "name": "Twinkly",
+  "codeowners": ["@air720boarder"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
+  "homekit": {},
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/air720boarder/twinkly-homeassistant/issues",
+  "requirements": ["ttls>=1.9.0"],
+  "ssdp": [],
+  "version": "1.0.0",
+  "zeroconf": ["_xled._tcp.local."]
+} 

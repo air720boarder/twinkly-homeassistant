@@ -1,0 +1,66 @@
+{
+    "title": "Twinkly Home Assistant 통합",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Twinkly 연결",
+                "description": "Twinkly 장치 설정",
+                "data":
+                {
+                    "host": "IP 주소"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "연결 실패",
+            "invalid_auth": "인증 실패",
+            "unknown": "예기치 않은 오류"
+        },
+        "abort":
+        {
+            "already_configured": "장치가 이미 구성되어 있습니다."
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Twinkly 옵션",
+                "data":
+                {
+                    "scan_interval": "업데이트 간격 (초)",
+                    "brightness_scale": "밝기 스케일 (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "효과",
+                        "state":
+                        {
+                            "movie": "동영상",
+                            "effect": "효과",
+                            "rt": "실시간",
+                            "off": "꺼짐"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

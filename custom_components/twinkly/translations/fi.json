@@ -1,0 +1,66 @@
+{
+    "title": "Twinkly Home Assistant -integraatio",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Yhdistä Twinklyyn",
+                "description": "Määritä Twinkly-laitteesi",
+                "data":
+                {
+                    "host": "IP-osoite"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Yhteys epäonnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "abort":
+        {
+            "already_configured": "Laite on jo määritetty"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Twinkly-asetukset",
+                "data":
+                {
+                    "scan_interval": "Päivitysväli (sekuntia)",
+                    "brightness_scale": "Kirkkausasteikko (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "Tehoste",
+                        "state":
+                        {
+                            "movie": "Elokuva",
+                            "effect": "Tehoste",
+                            "rt": "Reaaliaikainen",
+                            "off": "Pois"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

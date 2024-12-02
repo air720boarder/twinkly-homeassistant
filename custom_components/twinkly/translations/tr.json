@@ -1,0 +1,85 @@
+{
+    "title": "Twinkly Home Assistant Entegrasyonu",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Twinkly Cihazı Ekle",
+                "data":
+                {
+                    "host": "Ana Bilgisayar veya IP Adresi"
+                }
+            },
+            "user":
+            {
+                "title": "Twinkly'ye Bağlan",
+                "description": "Twinkly cihazınızı kurun",
+                "data":
+                {
+                    "host": "IP Adresi"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Cihaza bağlanılamadı.",
+            "not_twinkly_device": "Bulunan cihaz bir Twinkly cihazı değil.",
+            "invalid_auth": "Geçersiz kimlik doğrulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "abort":
+        {
+            "already_configured": "Bu cihaz zaten yapılandırılmış.",
+            "cannot_connect": "Cihaza bağlanılamadı.",
+            "not_twinkly_device": "Bulunan cihaz bir Twinkly cihazı değil."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly açıldı",
+            "turned_off": "Twinkly kapatıldı"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Twinkly Seçenekleri",
+                "data":
+                {
+                    "scan_interval": "Güncelleme aralığı (saniye)",
+                    "brightness_scale": "Parlaklık ölçeği (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "Efekt",
+                        "state":
+                        {
+                            "movie": "Film",
+                            "effect": "Efekt",
+                            "rt": "Gerçek zamanlı",
+                            "off": "Kapalı"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

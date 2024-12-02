@@ -1,0 +1,74 @@
+{
+    "title": "Интеграция Twinkly для Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Подключение к Twinkly",
+                "description": "Настройте ваше устройство Twinkly",
+                "data":
+                {
+                    "host": "IP-адрес"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Не удалось подключиться",
+            "invalid_auth": "Ошибка аутентификации",
+            "unknown": "Неожиданная ошибка"
+        },
+        "abort":
+        {
+            "already_configured": "Устройство уже настроено"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Настройки Twinkly",
+                "data":
+                {
+                    "scan_interval": "Интервал обновления (секунды)",
+                    "brightness_scale": "Шкала яркости (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "Эффект",
+                        "state":
+                        {
+                            "movie": "Фильм",
+                            "effect": "Эффект",
+                            "rt": "Реальное время",
+                            "off": "Выключено"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly включен",
+            "turned_off": "Twinkly выключен"
+        }
+    }
+}

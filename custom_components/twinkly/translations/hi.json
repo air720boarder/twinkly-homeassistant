@@ -1,0 +1,66 @@
+{
+    "title": "Twinkly Home Assistant एकीकरण",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Twinkly से कनेक्ट करें",
+                "description": "अपना Twinkly डिवाइस सेट करें",
+                "data":
+                {
+                    "host": "IP पता"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "कनेक्ट करने में विफल",
+            "invalid_auth": "अमान्य प्रमाणीकरण",
+            "unknown": "अनपेक्षित त्रुटि"
+        },
+        "abort":
+        {
+            "already_configured": "डिवाइस पहले से कॉन्फ़िगर है"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Twinkly विकल्प",
+                "data":
+                {
+                    "scan_interval": "अपडेट अंतराल (सेकंड)",
+                    "brightness_scale": "चमक स्केल (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "प्रभाव",
+                        "state":
+                        {
+                            "movie": "मूवी",
+                            "effect": "प्रभाव",
+                            "rt": "रीयल-टाइम",
+                            "off": "बंद"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

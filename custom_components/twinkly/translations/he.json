@@ -1,0 +1,66 @@
+{
+    "title": "אינטגרציית Twinkly עבור Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "התחבר ל-Twinkly",
+                "description": "הגדר את התקן Twinkly שלך",
+                "data":
+                {
+                    "host": "כתובת IP"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "החיבור נכשל",
+            "invalid_auth": "אימות לא חוקי",
+            "unknown": "שגיאה לא צפויה"
+        },
+        "abort":
+        {
+            "already_configured": "ההתקן כבר הוגדר"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "אפשרויות Twinkly",
+                "data":
+                {
+                    "scan_interval": "מרווח עדכון (שניות)",
+                    "brightness_scale": "סולם בהירות (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "אפקט",
+                        "state":
+                        {
+                            "movie": "סרט",
+                            "effect": "אפקט",
+                            "rt": "זמן אמת",
+                            "off": "כבוי"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

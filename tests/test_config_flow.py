@@ -4,7 +4,7 @@ from homeassistant import config_entries
 from homeassistant.core import HomeAssistant
 from unittest.mock import patch
 
-from custom_components.twinkly_homeassistant.const import DOMAIN
+from custom_components.twinkly.const import DOMAIN
 
 async def test_manual_config_flow(hass: HomeAssistant):
     """Test manual configuration flow."""

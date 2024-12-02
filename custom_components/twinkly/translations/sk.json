@@ -1,0 +1,66 @@
+{
+    "title": "Integrácia Twinkly pre Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Pripojenie k Twinkly",
+                "description": "Nastavte svoje zariadenie Twinkly",
+                "data":
+                {
+                    "host": "IP adresa"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Nepodarilo sa pripojiť",
+            "invalid_auth": "Neplatné overenie",
+            "unknown": "Neočakávaná chyba"
+        },
+        "abort":
+        {
+            "already_configured": "Zariadenie je už nakonfigurované"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Možnosti Twinkly",
+                "data":
+                {
+                    "scan_interval": "Interval aktualizácie (sekundy)",
+                    "brightness_scale": "Škála jasu (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "Efekt",
+                        "state":
+                        {
+                            "movie": "Film",
+                            "effect": "Efekt",
+                            "rt": "Reálny čas",
+                            "off": "Vypnuté"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

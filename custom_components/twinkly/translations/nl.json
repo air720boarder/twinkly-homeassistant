@@ -1,0 +1,49 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Verbind met Twinkly",
+                "description": "Stel je Twinkly-apparaat in",
+                "data": {
+                    "host": "IP-adres"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_auth": "Ongeldige authenticatie",
+            "unknown": "Onverwachte fout"
+        },
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Twinkly-opties",
+                "data": {
+                    "scan_interval": "Update-interval (seconden)",
+                    "brightness_scale": "Helderheidsschaal (%)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "twinkly": {
+                "state_attributes": {
+                    "effect": {
+                        "name": "Effect",
+                        "state": {
+                            "movie": "Film",
+                            "effect": "Effect",
+                            "rt": "Real-time",
+                            "off": "Uit"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

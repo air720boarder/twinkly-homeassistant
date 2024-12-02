@@ -1,0 +1,66 @@
+{
+    "title": "Twinkly Home Assistant-integration",
+    "config":
+    {
+        "step":
+        {
+            "user":
+            {
+                "title": "Anslut till Twinkly",
+                "description": "Konfigurera din Twinkly-enhet",
+                "data":
+                {
+                    "host": "IP-adress"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Det gick inte att ansluta",
+            "invalid_auth": "Ogiltig autentisering",
+            "unknown": "Oväntat fel"
+        },
+        "abort":
+        {
+            "already_configured": "Enheten är redan konfigurerad"
+        }
+    },
+    "options":
+    {
+        "step":
+        {
+            "init":
+            {
+                "title": "Twinkly-alternativ",
+                "data":
+                {
+                    "scan_interval": "Uppdateringsintervall (sekunder)",
+                    "brightness_scale": "Ljusstyrkeskala (%)"
+                }
+            }
+        }
+    },
+    "entity":
+    {
+        "light":
+        {
+            "twinkly":
+            {
+                "state_attributes":
+                {
+                    "effect":
+                    {
+                        "name": "Effekt",
+                        "state":
+                        {
+                            "movie": "Film",
+                            "effect": "Effekt",
+                            "rt": "Realtid",
+                            "off": "Av"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
