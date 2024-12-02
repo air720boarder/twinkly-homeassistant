@@ -40,3 +40,17 @@ htmlcov/
 coverage.xml
 *.cover
 .env
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Other
+.DS_Store
+.idea/

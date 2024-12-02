@@ -1,0 +1,15 @@
+[tool.ruff]
+line-length = 88
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "env",
+    ".venv",
+    "build",
+    "dist",
+    "custom_components/*/__init__.py",
+    "tests",
+]
+select = ["E", "F", "W", "C90"]
+ignore = []
