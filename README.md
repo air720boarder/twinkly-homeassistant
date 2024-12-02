@@ -68,6 +68,10 @@ If you encounter any issues, please report them on the [GitHub Issues](https://g
 
 This project is licensed under the MIT License.
 
+## Credit
+
+This project heavily leverages the `ttls` library, which is a Python library for controlling Twinkly Generation II lights. [TTLS Github](https://github.com/jschlyter/ttls).
+
 ## HACS Installation
 
 1. Add this repository to HACS as a custom repository.
