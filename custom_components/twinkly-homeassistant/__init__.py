@@ -11,7 +11,7 @@ PLATFORMS = ["light"]
 
 
 async def async_setup(hass: HomeAssistant, config: dict):
-    """Set up the Twinkly Gen2 component."""
+    """Set up the Twinkly HomeAssistant Custom component."""
     hass.data.setdefault(DOMAIN, {})
     return True
 

@@ -1,5 +1,5 @@
-DOMAIN = "twinkly_gen2"
-DEFAULT_NAME = "Twinkly Gen2 Light"
+DOMAIN = "twinkly-homeassistant"
+DEFAULT_NAME = "Twinkly HomeAssistant Custom Light"
 SCAN_INTERVAL = 10  # in seconds
 
 # Supported features

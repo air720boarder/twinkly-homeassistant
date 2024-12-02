@@ -1,6 +1,6 @@
 {
     "domain": "twinkly-homeassistant",
-    "name": "Twinkly Generation II Lights",
+    "name": "Twinkly HomeAssistant - Custom",
     "version": "1.0.0",
     "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
     "requirements":
