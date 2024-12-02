@@ -1,0 +1,36 @@
+{
+    "title": "Integrácia Twinkly pre Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Pridať zariadenie Twinkly",
+                "data":
+                {
+                    "host": "Hostiteľ alebo IP adresa"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Nepodarilo sa pripojiť k zariadeniu.",
+            "not_twinkly_device": "Zistené zariadenie nie je zariadenie Twinkly."
+        },
+        "abort":
+        {
+            "already_configured": "Toto zariadenie je už nakonfigurované.",
+            "cannot_connect": "Nepodarilo sa pripojiť k zariadeniu.",
+            "not_twinkly_device": "Zistené zariadenie nie je zariadenie Twinkly."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly zapnuté",
+            "turned_off": "Twinkly vypnuté"
+        }
+    }
+}

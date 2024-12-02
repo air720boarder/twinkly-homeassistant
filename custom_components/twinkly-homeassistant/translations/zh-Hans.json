@@ -1,0 +1,36 @@
+{
+    "title": "Twinkly Home Assistant 集成",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "添加 Twinkly 设备",
+                "data":
+                {
+                    "host": "主机名或IP地址"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "无法连接到设备。",
+            "not_twinkly_device": "发现的设备不是 Twinkly 设备。"
+        },
+        "abort":
+        {
+            "already_configured": "此设备已配置。",
+            "cannot_connect": "无法连接到设备。",
+            "not_twinkly_device": "发现的设备不是 Twinkly 设备。"
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly 已开启",
+            "turned_off": "Twinkly 已关闭"
+        }
+    }
+}

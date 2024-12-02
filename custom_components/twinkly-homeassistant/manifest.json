@@ -1,6 +1,6 @@
 {
-    "domain": "twinkly-homeassistant",
-    "name": "Twinkly HomeAssistant - Custom",
+    "domain": "twinkly_homeassistant",
+    "name": "Twinkly Home Assistant Integration",
     "version": "1.0.0",
     "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
     "requirements":
@@ -16,5 +16,6 @@
     [
         "_http._tcp.local."
     ],
-    "config_flow": true
+    "config_flow": true,
+    "integration_type": "hub"
 }

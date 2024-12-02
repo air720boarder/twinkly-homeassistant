@@ -1,0 +1,36 @@
+{
+    "title": "Twinkly Home Assistant एकीकरण",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Twinkly डिवाइस जोड़ें",
+                "data":
+                {
+                    "host": "होस्ट या IP पता"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "डिवाइस से कनेक्ट नहीं हो सका।",
+            "not_twinkly_device": "पाया गया डिवाइस Twinkly डिवाइस नहीं है।"
+        },
+        "abort":
+        {
+            "already_configured": "यह डिवाइस पहले से कॉन्फ़िगर है।",
+            "cannot_connect": "डिवाइस से कनेक्ट नहीं हो सका।",
+            "not_twinkly_device": "पाया गया डिवाइस Twinkly डिवाइस नहीं है।"
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly चालू हुआ",
+            "turned_off": "Twinkly बंद हुआ"
+        }
+    }
+}

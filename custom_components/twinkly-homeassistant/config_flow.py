@@ -10,7 +10,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Twinkly HomeAssistant Custom Integration."""
+    """Handle a config flow for Twinkly Home Assistant Integration."""
 
     VERSION = 1
 

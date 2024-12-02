@@ -1,0 +1,36 @@
+{
+    "title": "Twinkly Home Assistant インテグレーション",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Twinkly デバイスを追加",
+                "data":
+                {
+                    "host": "ホスト名またはIPアドレス"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "デバイスに接続できませんでした。",
+            "not_twinkly_device": "発見されたデバイスはTwinklyデバイスではありません。"
+        },
+        "abort":
+        {
+            "already_configured": "このデバイスは既に設定されています。",
+            "cannot_connect": "デバイスに接続できませんでした。",
+            "not_twinkly_device": "発見されたデバイスはTwinklyデバイスではありません。"
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinklyがオンになりました",
+            "turned_off": "Twinklyがオフになりました"
+        }
+    }
+}

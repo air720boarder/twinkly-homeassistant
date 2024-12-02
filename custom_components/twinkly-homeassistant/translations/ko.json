@@ -1,0 +1,36 @@
+{
+    "title": "Twinkly Home Assistant 통합",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Twinkly 장치 추가",
+                "data":
+                {
+                    "host": "호스트 또는 IP 주소"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "장치에 연결할 수 없습니다.",
+            "not_twinkly_device": "발견된 장치는 Twinkly 장치가 아닙니다."
+        },
+        "abort":
+        {
+            "already_configured": "이 장치는 이미 구성되어 있습니다.",
+            "cannot_connect": "장치에 연결할 수 없습니다.",
+            "not_twinkly_device": "발견된 장치는 Twinkly 장치가 아닙니다."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly 켜짐",
+            "turned_off": "Twinkly 꺼짐"
+        }
+    }
+}

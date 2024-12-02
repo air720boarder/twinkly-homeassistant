@@ -11,13 +11,13 @@ PLATFORMS = ["light"]
 
 
 async def async_setup(hass: HomeAssistant, config: dict):
-    """Set up the Twinkly HomeAssistant Custom component."""
+    """Set up the Twinkly Home Assistant component."""
     hass.data.setdefault(DOMAIN, {})
     return True
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Set up Twinkly Gen2 lights from a config entry."""
+    """Set up Twinkly lights from a config entry."""
     from ttls import Twinkly
 
     twinkly = Twinkly(entry.data["host"])

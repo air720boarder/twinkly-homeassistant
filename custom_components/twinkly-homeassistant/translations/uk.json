@@ -1,0 +1,36 @@
+{
+    "title": "Інтеграція Twinkly для Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Додати пристрій Twinkly",
+                "data":
+                {
+                    "host": "Хост або IP-адреса"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Не вдалося підключитися до пристрою.",
+            "not_twinkly_device": "Знайдений пристрій не є пристроєм Twinkly."
+        },
+        "abort":
+        {
+            "already_configured": "Цей пристрій вже налаштовано.",
+            "cannot_connect": "Не вдалося підключитися до пристрою.",
+            "not_twinkly_device": "Знайдений пристрій не є пристроєм Twinkly."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly увімкнено",
+            "turned_off": "Twinkly вимкнено"
+        }
+    }
+}

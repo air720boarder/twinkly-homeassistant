@@ -1,0 +1,36 @@
+{
+    "title": "تكامل Twinkly مع Home Assistant",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "إضافة جهاز Twinkly",
+                "data":
+                {
+                    "host": "اسم المضيف أو عنوان IP"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "فشل الاتصال بالجهاز.",
+            "not_twinkly_device": "الجهاز المكتشف ليس جهاز Twinkly."
+        },
+        "abort":
+        {
+            "already_configured": "تم تكوين هذا الجهاز بالفعل.",
+            "cannot_connect": "فشل الاتصال بالجهاز.",
+            "not_twinkly_device": "الجهاز المكتشف ليس جهاز Twinkly."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "تم تشغيل Twinkly",
+            "turned_off": "تم إيقاف Twinkly"
+        }
+    }
+}

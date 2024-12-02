@@ -19,7 +19,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
-    """Set up Twinkly HomeAssistant Custom light based on a config entry."""
+    """Set up Twinkly light based on a config entry."""
     twinkly = hass.data[DOMAIN][config_entry.entry_id]
     async_add_entities([TwinklyLight(twinkly)], True)
 

@@ -1,0 +1,36 @@
+{
+    "title": "Twinkly Home Assistant-integration",
+    "config":
+    {
+        "step":
+        {
+            "manual":
+            {
+                "title": "Tilføj Twinkly-enhed",
+                "data":
+                {
+                    "host": "Vært eller IP-adresse"
+                }
+            }
+        },
+        "error":
+        {
+            "cannot_connect": "Kunne ikke oprette forbindelse til enheden.",
+            "not_twinkly_device": "Den opdagede enhed er ikke en Twinkly-enhed."
+        },
+        "abort":
+        {
+            "already_configured": "Denne enhed er allerede konfigureret.",
+            "cannot_connect": "Kunne ikke oprette forbindelse til enheden.",
+            "not_twinkly_device": "Den opdagede enhed er ikke en Twinkly-enhed."
+        }
+    },
+    "device_automation":
+    {
+        "trigger_type":
+        {
+            "turned_on": "Twinkly tændt",
+            "turned_off": "Twinkly slukket"
+        }
+    }
+}
