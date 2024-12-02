@@ -2,6 +2,7 @@ import logging
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.components import zeroconf
+from ttls import Twinkly
 import voluptuous as vol
 
 from .const import DOMAIN

@@ -2,6 +2,7 @@ import logging
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from ttls import Twinkly
 
 from .const import DOMAIN
 
