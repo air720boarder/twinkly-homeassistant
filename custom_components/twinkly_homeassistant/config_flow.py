@@ -9,7 +9,7 @@ from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-
+@config_entries.HANDLERS.register(DOMAIN)
 class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for Twinkly Home Assistant Integration."""
 
@@ -55,4 +55,5 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             self.context.update({"title_placeholders": {"name": twinkly.device_name}})
             return self.async_create_entry(title=twinkly.device_name, data={"host": host})
         except Exception:
-            return self.async_abort(reason="cannot_connect")
+            _LOGGER.error("Failed to connect to Twinkly device at %s", host)
+            return await self.async_step_manual()

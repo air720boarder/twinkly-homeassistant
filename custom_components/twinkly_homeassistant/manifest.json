@@ -10,4 +10,4 @@
     "config_flow": true,
     "integration_type": "hub",
     "icon": "custom_components/twinkly_homeassistant/icon.png"
-  }
+}
