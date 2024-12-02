@@ -1,6 +1,6 @@
 import logging
 import asyncio
-from ttls import Twinkly
+from ttls.client import Twinkly
 
 from homeassistant.components.light import (
     ATTR_BRIGHTNESS,

@@ -19,6 +19,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.ruff_cache/
 
 # Home Assistant
 .storage
@@ -37,4 +38,5 @@ htmlcov/
 .tox/
 .pytest_cache/
 coverage.xml
-*.cover 
+*.cover
+.env

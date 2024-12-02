@@ -2,81 +2,56 @@
 
 # Twinkly Home Assistant Integration *(Unofficial)*
 
-This is a custom integration for Home Assistant to control Twinkly Generation II lights using the `ttls` library.
+[![GitHub Release][releases-shield]][releases]
+[![GitHub Activity][commits-shield]][commits]
+[![License][license-shield]](LICENSE)
+[![hacs][hacsbadge]][hacs]
+![Project Maintenance][maintenance-shield]
+
+Home Assistant integration for Twinkly smart lights.
 
 ## Installation
 
-### Via HACS (Home Assistant Community Store)
+### HACS (Recommended)
 
-1. Ensure HACS is installed in your Home Assistant setup.
-2. In HACS, go to the Integrations section.
-3. Click on the three dots in the top right corner and select "Custom repositories".
-4. Add the repository URL: `https://github.com/air720boarder/twinkly-homeassistant` and select "Integration" as the category.
-5. Search for "Twinkly Home Assistant Integration" and install it.
-6. Restart Home Assistant.
+1. Install [HACS](https://hacs.xyz/)
+2. Add this repository to HACS as a custom repository:
+   - Click on HACS in the sidebar
+   - Click on Integrations
+   - Click the three dots in the top right corner
+   - Select "Custom repositories"
+   - Add the URL of this repository
+   - Select "Integration" as the category
+3. Click Install
+4. Restart Home Assistant
 
 ### Manual Installation
 
-1. Download the `twinkly_homeassistant` folder from the `custom_components` directory in this repository.
-2. Place the `twinkly_homeassistant` folder into your Home Assistant's `custom_components` directory.
-3. Restart Home Assistant.
+1. Copy the `custom_components/twinkly` directory to your Home Assistant's `custom_components` directory
+2. Restart Home Assistant
 
 ## Configuration
 
-1. After installation and restart, go to **Settings > Devices & Services > Add Integration**.
-2. Search for **Twinkly Home Assistant Integration**.
-3. Follow the setup wizard to add your Twinkly devices.
+1. Go to Settings -> Devices & Services
+2. Click "Add Integration"
+3. Search for "Twinkly"
+4. Follow the configuration steps
 
 ## Features
 
-- Auto-discovery of Twinkly devices on your network.
-- Control power, brightness, color, and effects.
-- Supports multiple Twinkly devices.
-- Local polling for status updates.
+- Automatic discovery of Twinkly devices
+- Support for on/off, brightness, and effects
+- Real-time control and status updates
 
-## Supported Languages
+## Contributing
 
-This integration includes translations for the following languages:
+This project welcomes contributions and suggestions. Please fork the repository and submit a pull request with your changes.
 
-- **English**
-- **Spanish (Español)**
-- **French (Français)**
-- **German (Deutsch)**
-- **Italian (Italiano)**
-- **Dutch (Nederlands)**
-- **Portuguese (Português)**
-- **Japanese (日本語)**
-- **Chinese (Simplified and Traditional)**
-- **Arabic (العربية)**
-- **Russian (Русский)**
-- **Hebrew (עברית)**
-- **Polish (Polski)**
-- **Swedish (Svenska)**
-- **Norwegian (Norsk Bokmål)**
-- **Finnish (Suomi)**
-- **Danish (Dansk)**
-- **Korean (한국어)**
-- **Turkish (Türkçe)**
-- **Czech (Čeština)**
-- **Slovak (Slovenčina)**
-- **Ukrainian (Українська)**
-- **Hindi (हिन्दी)**
-
-## Issues
-
-If you encounter any issues, please report them on the [GitHub Issues](https://github.com/air720boarder/twinkly-homeassistant/issues) page.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Credit
-
-This project heavily leverages the `ttls` library, which is a Python library for controlling Twinkly Generation II lights. [TTLS Github](https://github.com/jschlyter/ttls).
-
-## HACS Installation
-
-1. Add this repository to HACS as a custom repository.
-2. Search for **Twinkly Home Assistant Integration** in HACS and install it.
-3. Restart Home Assistant.
-4. Twinkly devices should be auto-discovered. If not, you can add them manually via **Settings > Devices & Services > Add Integration**.
+[commits-shield]: https://img.shields.io/github/commit-activity/y/air720boarder/twinkly-homeassistant.svg
+[commits]: https://github.com/air720boarder/twinkly-homeassistant/commits/main
+[hacs]: https://github.com/hacs/integration
+[hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg
+[license-shield]: https://img.shields.io/github/license/air720boarder/twinkly-homeassistant.svg
+[maintenance-shield]: https://img.shields.io/badge/maintainer-%40air720boarder-blue.svg
+[releases-shield]: https://img.shields.io/github/release/air720boarder/twinkly-homeassistant.svg
+[releases]: https://github.com/air720boarder/twinkly-homeassistant/releases

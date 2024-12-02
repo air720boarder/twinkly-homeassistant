@@ -2,7 +2,7 @@ import logging
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.components import zeroconf
-from ttls import Twinkly
+from ttls.client import Twinkly
 import voluptuous as vol
 
 from .const import DOMAIN
@@ -15,8 +15,29 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     async def async_step_user(self, user_input=None):
-        """Handle the initial step."""
-        return await self.async_step_manual(user_input)
+        """Handle the start of the config flow."""
+        errors = {}
+
+        if user_input is not None:
+            host = user_input["host"]
+
+            twinkly = Twinkly(host)
+            try:
+                await self.hass.async_add_executor_job(twinkly.update)
+
+                # If successful, create the entry
+                return self.async_create_entry(
+                    title=twinkly.device_name,
+                    data={"host": host}
+                )
+            except Exception:
+                errors["base"] = "cannot_connect"
+
+        return self.async_show_form(
+            step_id="user",
+            data_schema=vol.Schema({vol.Required("host"): str}),
+            errors=errors,
+        )
 
     async def async_step_manual(self, user_input=None):
         """Handle manual configuration."""
@@ -27,7 +48,7 @@ class TwinklyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 f"Connecting to Twinkly device at {host}...",
                 title="Twinkly Setup"
             )
-            from ttls import Twinkly
+            from ttls.client import Twinkly
 
             twinkly = Twinkly(host)
             try:
