@@ -7,4 +7,4 @@ find . -type d -name "__pycache__" -exec rm -r {} +
 rm -rf .pytest_cache
 
 # Run tests with coverage
-pytest -v --cov=custom_components.twinkly --cov-report=term-missing 
+pytest -v --cov=custom_components.twinkly_custom --cov-report=term-missing 

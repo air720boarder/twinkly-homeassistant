@@ -1,34 +1,72 @@
 """Test the Twinkly Custom light platform."""
-import pytest
 from unittest.mock import patch, AsyncMock
 from homeassistant.core import HomeAssistant
-from custom_components.twinkly.const import DOMAIN
+from homeassistant.const import (
+    CONF_HOST,
+    STATE_ON,
+    STATE_OFF,
+)
+from homeassistant.components.light import (
+    ATTR_BRIGHTNESS,
+)
 
-@patch("custom_components.twinkly.config_flow.Twinkly")
+import pytest
+from pytest_homeassistant_custom_component.common import MockConfigEntry
+
+from custom_components.twinkly_custom.const import DOMAIN
+
 @pytest.mark.asyncio
-async def test_light_turn_on(mock_light_twinkly, hass: HomeAssistant):
-    """Test turning on a light."""
-    # Setup your mocks
+async def test_light_setup(hass: HomeAssistant):
+    """Test setting up the Twinkly Custom light."""
     mock_device = AsyncMock()
-    mock_device.is_on = False
-    mock_device.mode = "off"
-    mock_device.brightness = 100
+    mock_device.device_name = "Test Twinkly"
+    mock_device.is_on = AsyncMock(return_value=False)
+    mock_device.get_brightness = AsyncMock(return_value=100)
+    mock_device.turn_on = AsyncMock()
+    mock_device.turn_off = AsyncMock()
+    mock_device.set_brightness = AsyncMock()
+    mock_device.update = AsyncMock()
     mock_device.mac = "AA:BB:CC:DD:EE:FF"
-    mock_device.device_name = "Test Twinkly Custom"
 
-    mock_light_twinkly.return_value = mock_device
+    with patch(
+        "custom_components.twinkly_custom.light.Twinkly",
+        return_value=mock_device,
+    ):
+        entry = MockConfigEntry(
+            domain=DOMAIN,
+            data={CONF_HOST: "192.168.1.123"},
+        )
+        entry.add_to_hass(hass)
 
-    # Initialize the config flow
-    result = await hass.config_entries.flow.async_init(
-        DOMAIN,
-        context={"source": "user"},
-        data={"host": "192.168.1.123"},
-    )
+        # Setup the entry
+        assert await hass.config_entries.async_setup(entry.entry_id)
+        await hass.async_block_till_done()
 
-    # Assert the flow results
-    assert result["type"] == "create_entry"
-    assert result["title"] == "Test Twinkly Custom"
-    assert result["data"]["host"] == "192.168.1.123"
+        # Verify the entity is added
+        entity_id = "light.test_twinkly"
+        state = hass.states.get(entity_id)
+        assert state is not None
+        assert state.state == STATE_OFF
 
-    # Additional assertions or operations...
-    assert mock_light_twinkly.called
+        # Test turning on the light
+        await hass.services.async_call(
+            "light",
+            "turn_on",
+            {"entity_id": entity_id, ATTR_BRIGHTNESS: 200},
+            blocking=True,
+        )
+        await hass.async_block_till_done()
+
+        mock_device.turn_on.assert_called_once()
+        mock_device.set_brightness.assert_called_with(200)
+
+        # Update the mock to return True for is_on
+        mock_device.is_on.return_value = True
+
+        # Force an update of the entity
+        await hass.helpers.entity_component.async_update_entity(entity_id)
+        await hass.async_block_till_done()
+
+        # Verify the state is now 'on'
+        state = hass.states.get(entity_id)
+        assert state.state == STATE_ON

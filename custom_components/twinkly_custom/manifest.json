@@ -1,0 +1,15 @@
+{
+    "domain": "twinkly_custom",
+    "name": "Twinkly Custom",
+    "documentation": "https://github.com/air720boarder/twinkly-homeassistant",
+    "dependencies": [],
+    "codeowners": ["@air720boarder"],
+    "requirements": ["ttls>=1.9.0", "zeroconf>=0.38.0"],
+    "config_flow": true,
+    "iot_class": "local_polling",
+    "version": "1.0.0",
+    "ssdp": [],
+    "zeroconf": ["_xled._tcp.local."],
+    "homekit": {},
+    "issue_tracker": "https://github.com/air720boarder/twinkly-homeassistant/issues"
+} 
