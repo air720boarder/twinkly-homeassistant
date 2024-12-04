@@ -1,4 +1,4 @@
-"""Global fixtures for Twinkly integration."""
+"""Test configuration for Twinkly Custom integration."""
 import os
 import sys
 

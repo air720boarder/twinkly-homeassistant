@@ -84,3 +84,5 @@ class TwinklyLight(LightEntity):
         """Handle entity removal."""
         await super().async_will_remove_from_hass()
         # Perform any additional cleanup here
+
+    await coordinator.async_request_refresh()

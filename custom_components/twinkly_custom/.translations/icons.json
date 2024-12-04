@@ -1,0 +1,9 @@
+{
+  "domain": "twinkly_custom",
+  "icons": [
+    {
+      "device_class": "twinkly_light",
+      "icon": "mdi:string-lights"
+    }
+  ]
+} 

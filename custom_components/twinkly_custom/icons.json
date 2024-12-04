@@ -1,10 +1,9 @@
 {
     "entity": {
       "light": {
-        "light": {
-          "default": "mdi:string-lights",
-          "on": "mdi:string-lights",
+        "twinkly_custom": {
           "off": "mdi:string-lights-off",
+          "on": "mdi:string-lights",
           "unavailable": "mdi:string-lights-off"
         }
       }
